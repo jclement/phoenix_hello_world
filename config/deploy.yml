@@ -77,7 +77,20 @@ aliases:
 
 # Use accessory services (secrets come from .kamal/secrets).
 #
-# accessories:
+accessories:
+  db:
+    image: postgres:15
+    env:
+      clear:
+        POSTGRES_USER: "${POSTGRES_USER}"
+        POSTGRES_DB: "${POSTGRES_DB}"
+      secret:
+        - POSTGRES_PASSWORD
+    directories:
+      - data:/var/lib/postgresql/data
+    files:
+      - db/production_setup.sql:/docker-entrypoint-initdb.d/setup.sql
+
 #   db:
 #     image: mysql:8.0
 #     host: 192.168.0.2
