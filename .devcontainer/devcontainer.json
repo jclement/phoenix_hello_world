@@ -23,7 +23,7 @@
 	
 	// Load my environment from the .env file (which MUST exist)
 	// useful for various secrets
-	"runArgs": ["--env-file",".env"],	
+	"runArgs": ["--env-file",".env", "--privileged"],	
 
 	// VSCode plugins I'd really like for this environment
 	"customizations": {
