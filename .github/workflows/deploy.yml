@@ -21,6 +21,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          ruby-version: '3.3' # Not needed with a `.ruby-version` or `.tool-versions`
 
       - run: gem install kamal -v 2.4.0
 
