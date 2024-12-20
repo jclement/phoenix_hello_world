@@ -24,3 +24,4 @@ end
 kamal app exec -i --reuse '/app/bin/hello_world remote' << EOF
   HelloWorld.Release.migrate
 EOF
+kamal app exec '/app/bin/migrate'
