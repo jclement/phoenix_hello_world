@@ -80,6 +80,7 @@ aliases:
 accessories:
   db:
     image: postgres:15
+    host: 143.110.213.100 
     env:
       clear:
         POSTGRES_USER: "${POSTGRES_USER}"
