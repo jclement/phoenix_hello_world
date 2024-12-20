@@ -35,16 +35,15 @@ registry:
 # Configure builder setup.
 builder:
   arch: amd64
-  #remote: ssh://root@143.110.213.100
 
 env:
    clear:
      PORT: 4000
      MIX_ENV: prod
+     PHX_HOST: "${PHX_HOST}"
    secret:
      - DATABASE_URL
      - SECRET_KEY_BASE
-     - PHX_HOST
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal logs -r job" will tail logs from the first server in the job section.
@@ -80,7 +79,10 @@ aliases:
 accessories:
   db:
     image: postgres:15
-    host: 143.110.213.100 
+    roles: 
+      - web
+    options:
+      restart: always
     env:
       clear:
         POSTGRES_USER: "${POSTGRES_USER}"
