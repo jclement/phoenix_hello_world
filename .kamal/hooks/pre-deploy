@@ -21,7 +21,4 @@ if ENV["KAMAL_COMMAND"] == "rollback" || ENV["KAMAL_DESTINATION"] != "production
   exit 0
 end
 
-kamal app exec -i --reuse '/app/bin/hello_world remote' << EOF
-  HelloWorld.Release.migrate
-EOF
 kamal app exec '/app/bin/migrate'
